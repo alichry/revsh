@@ -2,7 +2,7 @@ FROM centos:7
 
 WORKDIR /root/build/revsh
 
-COPY ./compile.sh /root
+COPY ./docker-compile.sh /root
 
 RUN yum update -y \
     && yum install -y gcc glibc-static make git \
@@ -31,4 +31,4 @@ RUN yum update -y \
 
 EXPOSE 2200
 
-CMD /root/compile.sh
+CMD /root/docker-compile.sh
